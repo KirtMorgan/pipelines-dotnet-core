@@ -14,19 +14,20 @@ variables:
 
 steps:
 - script: dotnet restore
+  displayName: Dotnet Restore
 
 - task: DotNetCoreInstaller@0
+  displayName: Dotnet Install
   inputs:
     version: '2.1.300'
 
 - task: DotNetCoreCLI@2
-  displayName: Build
+  displayName: Dotnet Build
   inputs:
     command: build
-    projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet publish'
+  displayName: 'Dotnet Publish'
   inputs:
     command: publish
     publishWebProjects: True
@@ -34,4 +35,4 @@ steps:
     zipAfterPublish: True
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish build artifacts'
+  displayName: 'Publish Build Artifacts'
