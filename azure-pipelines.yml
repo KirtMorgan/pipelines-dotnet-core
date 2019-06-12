@@ -16,11 +16,6 @@ steps:
 - script: dotnet restore
   displayName: Dotnet Restore
 
-- task: DotNetCoreInstaller@0
-  displayName: Dotnet Install
-  inputs:
-    version: '2.1.300'
-
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'Dotnet Build $(buildConfiguration)'
 
