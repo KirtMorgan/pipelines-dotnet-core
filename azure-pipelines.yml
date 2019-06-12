@@ -7,14 +7,14 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'Ubuntu-16.04'
 
 variables:
   buildConfiguration: 'Release'
 
 steps:
 - script: dotnet restore
-  displayName: Dotnet Restore
+  displayName: 'Dotnet Restore'
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'Dotnet Build $(buildConfiguration)'
